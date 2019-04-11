@@ -1,0 +1,296 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4F107DB6-EFAD-4442-BCD8-850E1AD88555}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>ppe_valad</RootNamespace>
+    <AssemblyName>ppe_valad</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Dapper, Version=1.50.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.1.50.5\lib\net451\Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Protobuf, Version=3.6.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Protobuf.3.6.1\lib\net45\Google.Protobuf.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13\lib\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=8.0.14.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.8.0.14\lib\net452\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SqlServerCe, Version=9.0.242.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Cquential.System.Data.SqlServerCe.3.0.5206\lib\net35\System.Data.SqlServerCe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="bug.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="bug.Designer.cs">
+      <DependentUpon>bug.cs</DependentUpon>
+    </Compile>
+    <Compile Include="calendrier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="calendrier.Designer.cs">
+      <DependentUpon>calendrier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="candidater.cs" />
+    <Compile Include="ComboValuecs.cs" />
+    <Compile Include="compte_user.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="compte_user.Designer.cs">
+      <DependentUpon>compte_user.cs</DependentUpon>
+    </Compile>
+    <Compile Include="connexion.cs" />
+    <Compile Include="convocation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="convocation.Designer.cs">
+      <DependentUpon>convocation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DBMySQLUtils.cs" />
+    <Compile Include="acceuil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="acceuil.Designer.cs">
+      <DependentUpon>acceuil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gestion_habilitation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gestion_habilitation.Designer.cs">
+      <DependentUpon>gestion_habilitation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gestion_inscrit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gestion_inscrit.Designer.cs">
+      <DependentUpon>gestion_inscrit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="add_session.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="add_session.Designer.cs">
+      <DependentUpon>add_session.cs</DependentUpon>
+    </Compile>
+    <Compile Include="add_formation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="add_formation.Designer.cs">
+      <DependentUpon>add_formation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formation.cs" />
+    <Compile Include="acceuil_login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="acceuil_login.Designer.cs">
+      <DependentUpon>acceuil_login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gestion_mdp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gestion_mdp.Designer.cs">
+      <DependentUpon>gestion_mdp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="incidents.cs" />
+    <Compile Include="inscription.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="inscription.Designer.cs">
+      <DependentUpon>inscription.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MesSessions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MesSessions.Designer.cs">
+      <DependentUpon>MesSessions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="numérisation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="numérisation.Designer.cs">
+      <DependentUpon>numérisation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="panneau_admin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="panneau_admin.Designer.cs">
+      <DependentUpon>panneau_admin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="panneau_gestionnaire.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="panneau_gestionnaire.Designer.cs">
+      <DependentUpon>panneau_gestionnaire.cs</DependentUpon>
+    </Compile>
+    <Compile Include="panneau_user.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="panneau_user.Designer.cs">
+      <DependentUpon>panneau_user.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Participant.cs" />
+    <Compile Include="PDF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PDF.Designer.cs">
+      <DependentUpon>PDF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="postuler.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="postuler.Designer.cs">
+      <DependentUpon>postuler.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Session.cs" />
+    <Compile Include="SHA.cs" />
+    <Compile Include="update_incident.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="update_incident.Designer.cs">
+      <DependentUpon>update_incident.cs</DependentUpon>
+    </Compile>
+    <Compile Include="visu_incidents.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="visu_incidents.Designer.cs">
+      <DependentUpon>visu_incidents.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="acceuil.resx">
+      <DependentUpon>acceuil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bug.resx">
+      <DependentUpon>bug.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="calendrier.resx">
+      <DependentUpon>calendrier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="compte_user.resx">
+      <DependentUpon>compte_user.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="convocation.resx">
+      <DependentUpon>convocation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gestion_habilitation.resx">
+      <DependentUpon>gestion_habilitation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gestion_inscrit.resx">
+      <DependentUpon>gestion_inscrit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="add_session.resx">
+      <DependentUpon>add_session.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="add_formation.resx">
+      <DependentUpon>add_formation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="acceuil_login.resx">
+      <DependentUpon>acceuil_login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gestion_mdp.resx">
+      <DependentUpon>gestion_mdp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="inscription.resx">
+      <DependentUpon>inscription.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MesSessions.resx">
+      <DependentUpon>MesSessions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="numérisation.resx">
+      <DependentUpon>numérisation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="panneau_admin.resx">
+      <DependentUpon>panneau_admin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="panneau_gestionnaire.resx">
+      <DependentUpon>panneau_gestionnaire.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="panneau_user.resx">
+      <DependentUpon>panneau_user.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PDF.resx">
+      <DependentUpon>PDF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="postuler.resx">
+      <DependentUpon>postuler.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="update_incident.resx">
+      <DependentUpon>update_incident.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="visu_incidents.resx">
+      <DependentUpon>visu_incidents.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
