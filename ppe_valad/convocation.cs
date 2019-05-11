@@ -58,8 +58,8 @@ namespace ppe_valad
             "\n\nVous trouverez ci-après tous les détails relatifs à cette formation.Celle - ci est obligatoire et rémunérée. Votre emploi du temps sera donc aménagé de telle sorte que vous puissiez y assister." +
             "\n\nPour toute information complémentaire, n’hésitez pas à contacter votre agence de proximité." +
             "\n\n\n\nLieu de la formation : " + Item_Session.lieux + "" +
-            "\n\nDu:" + Item_Session.dateDebut + "  au: " + Item_Session.dateFin +"" +
-            "\n\nHoraire début de la formation:" + dateDebut.Hour +
+            "\n\nDu:" + Item_Session.dateDebut+ "  au: " + Item_Session.dateFin +"" +
+            "\n\nHoraire début de la formation:" + "8h30" +
             "\n\nStagiaire(s) : " + Item_Participant.Nom +"  "+ Item_Participant.Prenom;
         }
 

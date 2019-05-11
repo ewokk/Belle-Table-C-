@@ -43,7 +43,6 @@
             this.tb_recherche = new System.Windows.Forms.TextBox();
             this.btinscrit_participant = new System.Windows.Forms.Button();
             this.btparticipant_inscrit = new System.Windows.Forms.Button();
-            this.btsave = new System.Windows.Forms.Button();
             this.bt_bug = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dg_participant)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dg_inscrit)).BeginInit();
@@ -116,9 +115,9 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(502, 276);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(290, 29);
+            this.label2.Size = new System.Drawing.Size(276, 29);
             this.label2.TabIndex = 54;
-            this.label2.Text = "Particiapants non inscrit:";
+            this.label2.Text = "Participants non inscrit:";
             // 
             // label1
             // 
@@ -126,9 +125,9 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(35, 320);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(228, 29);
+            this.label1.Size = new System.Drawing.Size(214, 29);
             this.label1.TabIndex = 53;
-            this.label1.Text = "Particiapant inscrit:";
+            this.label1.Text = "Participant inscrit:";
             // 
             // dg_participant
             // 
@@ -191,19 +190,9 @@
             this.btparticipant_inscrit.UseVisualStyleBackColor = false;
             this.btparticipant_inscrit.Click += new System.EventHandler(this.btparticipant_inscrit_Click);
             // 
-            // btsave
-            // 
-            this.btsave.Location = new System.Drawing.Point(357, 705);
-            this.btsave.Name = "btsave";
-            this.btsave.Size = new System.Drawing.Size(150, 45);
-            this.btsave.TabIndex = 62;
-            this.btsave.Text = "Valider";
-            this.btsave.UseVisualStyleBackColor = true;
-            this.btsave.Click += new System.EventHandler(this.btsave_Click);
-            // 
             // bt_bug
             // 
-            this.bt_bug.Location = new System.Drawing.Point(865, 732);
+            this.bt_bug.Location = new System.Drawing.Point(865, 701);
             this.bt_bug.Name = "bt_bug";
             this.bt_bug.Size = new System.Drawing.Size(75, 34);
             this.bt_bug.TabIndex = 63;
@@ -215,9 +204,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(941, 767);
+            this.ClientSize = new System.Drawing.Size(941, 742);
             this.Controls.Add(this.bt_bug);
-            this.Controls.Add(this.btsave);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.tbdatefin);
@@ -260,7 +248,6 @@
         private System.Windows.Forms.TextBox tb_recherche;
         private System.Windows.Forms.Button btinscrit_participant;
         private System.Windows.Forms.Button btparticipant_inscrit;
-        private System.Windows.Forms.Button btsave;
         private System.Windows.Forms.Button bt_bug;
     }
 }

@@ -15,11 +15,17 @@ namespace ppe_valad
         private string nom;
         private string prenom;
         private Session laSessionChoisie;
+        private string nom_formation;
+        private string session_date;
+        private string accepter;
+
 
         public int Id { get; set; }
         public int Id_Session { get; set; }
         public string Prenom { get; set; }
         public string Nom { get; set; }
+       
+
 
         public Participant()
         {
@@ -33,7 +39,9 @@ namespace ppe_valad
         laSessionChoisie    =    Session;
         }
 
-       public void SetParticipant(string Nom, string Prenom, Session Session)
+
+
+        public void SetParticipant(string Nom, string Prenom, Session Session)
     {
         nom                 =    Nom;
         prenom              =    Prenom;
@@ -53,6 +61,11 @@ namespace ppe_valad
         return this.GetNom_Prenom();
     }
 
-}
+    public void Save()
+    {
+           
+    }
+
+    }
 
 }

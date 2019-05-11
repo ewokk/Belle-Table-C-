@@ -82,6 +82,12 @@
     </Compile>
     <Compile Include="candidater.cs" />
     <Compile Include="ComboValuecs.cs" />
+    <Compile Include="compte_update.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="compte_update.Designer.cs">
+      <DependentUpon>compte_update.cs</DependentUpon>
+    </Compile>
     <Compile Include="compte_user.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,6 +113,12 @@
     </Compile>
     <Compile Include="gestion_habilitation.Designer.cs">
       <DependentUpon>gestion_habilitation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gestion_inscrit_admin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gestion_inscrit_admin.Designer.cs">
+      <DependentUpon>gestion_inscrit_admin.cs</DependentUpon>
     </Compile>
     <Compile Include="gestion_inscrit.cs">
       <SubType>Form</SubType>
@@ -191,8 +203,21 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Refu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Refu.Designer.cs">
+      <DependentUpon>Refu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Session.cs" />
     <Compile Include="SHA.cs" />
+    <Compile Include="souhait.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="souhait.Designer.cs">
+      <DependentUpon>souhait.cs</DependentUpon>
+    </Compile>
+    <Compile Include="souhaitformation.cs" />
     <Compile Include="update_incident.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -214,6 +239,9 @@
     <EmbeddedResource Include="calendrier.resx">
       <DependentUpon>calendrier.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="compte_update.resx">
+      <DependentUpon>compte_update.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="compte_user.resx">
       <DependentUpon>compte_user.cs</DependentUpon>
     </EmbeddedResource>
@@ -222,6 +250,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="gestion_habilitation.resx">
       <DependentUpon>gestion_habilitation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gestion_inscrit_admin.resx">
+      <DependentUpon>gestion_inscrit_admin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="gestion_inscrit.resx">
       <DependentUpon>gestion_inscrit.cs</DependentUpon>
@@ -271,6 +302,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Refu.resx">
+      <DependentUpon>Refu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="souhait.resx">
+      <DependentUpon>souhait.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="update_incident.resx">
       <DependentUpon>update_incident.cs</DependentUpon>
     </EmbeddedResource>

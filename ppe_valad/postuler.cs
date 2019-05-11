@@ -48,7 +48,6 @@ namespace ppe_valad
             dg_participant.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dg_participant.Columns[0].Visible = false;
             dg_participant.Columns[1].Visible = false;
-            dg_participant.Columns[2].Visible = false;
 
         }
 
@@ -67,19 +66,16 @@ namespace ppe_valad
             int id_session = Item_Session.id;
             var  Item_participant = (Participant)dg_participant.CurrentRow.DataBoundItem;
             int id = Item_participant.Id;
-            user = database.Select_idparticipant_par_user(id);
-            if (user.Count == 1)
-            {
-                foreach (Participant user_connecté in user)
-                {
-                    user_id = user_connecté;
-                }
-            }
-            int id_participant = user_id.Id;
-
-            database.Insert_postuler(id_participant, id_session);
+            
+            database.Insert_postuler(id, id_session);
 
             MessageBox.Show("Vous avez bien postuler a la session du  " + Item_Session.dateDebut + " à " + Item_Session.lieux);
+
+            dataParticipant = database.SelectParticipantAllnoninscrit(Item_Session.id);              // requet sql                 //
+            dg_participant.SelectionMode = DataGridViewSelectionMode.FullRowSelect;                 // selection de tout la ligne //
+            dg_participant.DataSource = dataParticipant;
+
+
         }
 
         private void bt_bug_Click(object sender, EventArgs e)
@@ -96,9 +92,11 @@ namespace ppe_valad
 
         private void bt_1_Click(object sender, EventArgs e)//recherche
         {
-             string LeNomCherche         =       tb_recherche.Text;
+            string LeNomCherche         =       tb_recherche.Text;
             string LePrenomCherche      =       tb_recherche.Text;
             var Item_Session = (Session)dg_Session.CurrentRow.DataBoundItem;
+            
+            
 
             if (tb_recherche.Text != "" )               // recherche si pas vide //
             {
@@ -109,7 +107,7 @@ namespace ppe_valad
             }
             else // sinon affiche tout le monde / refresh
             {
-                dataParticipant = database.SelectParticipantAll(Item_Session.id.ToString()); // requet sql //
+                dataParticipant = database.SelectParticipantAll(); // requet sql //
 
                 dg_participant.DataSource               =       dataParticipant;    // remplissage //
                
@@ -122,9 +120,9 @@ namespace ppe_valad
         private void dg_Session_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             var Item_Session = (Session)dg_Session.CurrentRow.DataBoundItem;
-            dataParticipant = database.SelectParticipantAll(Item_Session.id.ToString()); // requet sql                 //
-            dg_participant.SelectionMode = DataGridViewSelectionMode.FullRowSelect;      // selection de tout la ligne //
-            dg_participant.DataSource = dataParticipant;                                // remplissage                //
+            dataParticipant = database.SelectParticipantAllnoninscrit(Item_Session.id);              // requet sql                 //
+            dg_participant.SelectionMode = DataGridViewSelectionMode.FullRowSelect;                 // selection de tout la ligne //
+            dg_participant.DataSource = dataParticipant;                                           // remplissage                //
 
             // style //
             RefreshListe1();
@@ -136,6 +134,11 @@ namespace ppe_valad
             {
                 bt_1.PerformClick();
             }
+        }
+
+        private void dg_participant_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

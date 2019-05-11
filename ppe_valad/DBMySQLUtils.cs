@@ -38,15 +38,37 @@ namespace ppe_valad
         public void Insert_postuler(int Id_Participant, int Id_Session)
         {
             dbconnection.Open();
-            String strQuery = "INSERT INTO candidater(id ,accepter ,Id_Participant ,Id_Session ) VALUES(NULL , 0 ,@TheId_Participant,@TheId_Session)";
+            String strQuery = "INSERT INTO candidater(id ,accepter ,Id_Participant ,Id_Session ) VALUES(NULL , NULL ,@TheId_Participant,@TheId_Session)";
             var DynamicParameters = new DynamicParameters();
             DynamicParameters.Add("TheId_Participant",  Id_Participant);
             DynamicParameters.Add("TheId_Session",      Id_Session);
             dbconnection.Query<Participant>(strQuery, DynamicParameters).ToList();
             dbconnection.Close();
         }
+        public void update_postuler(int Id_Participant, int Id_Session, string motif,string accepter)
+        {
+            dbconnection.Open();
+            String strQuery = "UPDATE candidater SET accepter = '@accepter' ,motif_refus=@Themotif  WHERE Id = @TheId_Participant and Id_Session = @TheId_Session";
+            var DynamicParameters = new DynamicParameters();
+            DynamicParameters.Add("TheId_Participant", Id_Participant);
+            DynamicParameters.Add("TheId_Session", Id_Session);
+            DynamicParameters.Add("Themotif", motif);
+            DynamicParameters.Add("accepter", accepter);
+            dbconnection.Query<Participant>(strQuery, DynamicParameters).ToList();
+            dbconnection.Close();
+        }
+        public void delete_postuler(int Id_Participant, int Id_Session)
+        {
+            dbconnection.Open();
+            String strQuery = "DELETE FROM candidater WHERE Id_Participant=@TheId_Participant and Id_Session=@TheId_Session";
+            var DynamicParameters = new DynamicParameters();
+            DynamicParameters.Add("TheId_Participant", Id_Participant);
+            DynamicParameters.Add("TheId_Session", Id_Session);
+            dbconnection.Query<Participant>(strQuery, DynamicParameters).ToList();
+            dbconnection.Close();
+        }
 
-       
+
 
         public List<Session> Select_session_lié_compte(int id_participant)
         {
@@ -81,6 +103,17 @@ namespace ppe_valad
             var DynamicParameters = new DynamicParameters();
             DynamicParameters.Add("TheNom",     Nom);
             DynamicParameters.Add("ThePrenom",  Prenom);
+            dbconnection.Query<Participant>(strQuery, DynamicParameters).ToList();
+            dbconnection.Close();
+        }
+
+        public void Insert_souhait(int id_formation, int id_participant)
+        {
+            dbconnection.Open();
+            String strQuery = "INSERT INTO souhait (id_formation, id_participant) VALUES (@Theid_formation,@Theid_participant);";
+            var DynamicParameters = new DynamicParameters();
+            DynamicParameters.Add("Theid_formation", id_formation);
+            DynamicParameters.Add("Theid_participant", id_participant);
             dbconnection.Query<Participant>(strQuery, DynamicParameters).ToList();
             dbconnection.Close();
         }
@@ -144,6 +177,18 @@ namespace ppe_valad
             String strQuery = "UPDATE user SET type_user = @Thehabilitation WHERE id = @Theid;";
             var DynamicParameters = new DynamicParameters();
             DynamicParameters.Add("Thehabilitation", habilitation);
+            DynamicParameters.Add("Theid", Id);
+            dbconnection.Query<connexion>(strQuery, DynamicParameters).ToList();
+            dbconnection.Close();
+        }
+
+        public void Update_participant(int Id, string nom , string prenom)
+        {
+            dbconnection.Open();
+            String strQuery = "UPDATE participant SET nom = @Thenom , prenom = @Theprenom  WHERE id = @Theid;";
+            var DynamicParameters = new DynamicParameters();
+            DynamicParameters.Add("Thenom", nom);
+            DynamicParameters.Add("Thenom", nom);
             DynamicParameters.Add("Theid", Id);
             dbconnection.Query<connexion>(strQuery, DynamicParameters).ToList();
             dbconnection.Close();
@@ -223,14 +268,50 @@ namespace ppe_valad
             dbconnection.Close();
             return inscrits;
         }
-
-        public List<Participant> SelectParticipantAll(string Id_session)
+        public List<Participant> SelectParticipantAll()
         {
             dbconnection.Open();
             List<Participant> participants = new List<Participant>();
             String strQuery = "SELECT * FROM participant ";
             var DynamicParameters = new DynamicParameters();
             participants = dbconnection.Query<Participant>(strQuery).ToList();
+            dbconnection.Close();
+            return participants;
+        }
+
+        public List<Participant> SelectParticipantadmin()
+        {
+            dbconnection.Open();
+            List<Participant> participants = new List<Participant>();
+            String strQuery = "SELECT participant.Nom,participant.Prenom,formation.Nom as nom_formation,session.DateDebut as session_date,candidater.accepter from participant join candidater on participant.Id = candidater.Id_Participant join session on candidater.Id_Session = session.Id join formation on session.Id_Formation = formation.Id";
+            var DynamicParameters = new DynamicParameters();
+            participants = dbconnection.Query<Participant>(strQuery).ToList();
+            dbconnection.Close();
+            return participants;
+        }
+
+
+        public List<Participant> SelectParticipantAllsouhait(int Id_formation,int Id_session)
+        {
+            dbconnection.Open();
+            List<Participant> participants = new List<Participant>();
+            String strQuery = "SELECT * FROM participant where id in(select id_participant FROM souhait where Id_formation = @Theid and id_participant not in (select id_participant FROM candidater where Id_Session = @TheId_session))";
+            var DynamicParameters = new DynamicParameters();
+            DynamicParameters.Add("Theid", Id_formation);
+            DynamicParameters.Add("TheId_session", Id_session);
+            participants = dbconnection.Query<Participant>(strQuery, DynamicParameters).ToList();
+            dbconnection.Close();
+            return participants;
+        }
+
+        public List<Participant> SelectParticipantAllnoninscrit(int Id_session)
+        {
+            dbconnection.Open();
+            List<Participant> participants = new List<Participant>();
+            String strQuery = "SELECT * FROM participant where id not in(select id_participant FROM candidater where Id_Session = @Theid)";
+            var DynamicParameters = new DynamicParameters();
+            DynamicParameters.Add("Theid", Id_session);
+            participants = dbconnection.Query<Participant>(strQuery, DynamicParameters).ToList();
             dbconnection.Close();
             return participants;
         }

@@ -100,5 +100,15 @@ namespace ppe_valad
                 }
             
         }
+
+        private void bt_inscrit_Click(object sender, EventArgs e)
+        {
+            gestion_inscrit_admin formsinscrit = new gestion_inscrit_admin();
+
+            if (formsinscrit.ShowDialog() == DialogResult.OK)
+            {
+
+            }
+        }
     }
 }

@@ -110,6 +110,7 @@
             this.dg_participant.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dg_participant.Size = new System.Drawing.Size(528, 225);
             this.dg_participant.TabIndex = 45;
+            this.dg_participant.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dg_participant_CellContentClick);
             // 
             // bt_1
             // 

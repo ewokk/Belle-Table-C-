@@ -26,7 +26,7 @@ namespace ppe_valad
             string nom = tb_nom.Text;
             string prenom = tb_prenom.Text;
 
-            database.Insert_participant(nom, prenom, 1);    // changer le 1 en Id
+            database.Insert_participant(nom, prenom);    // changer le 1 en Id
             MessageBox.Show("Le compte "+nom+" "+prenom+" a été créé");
             this.DialogResult = DialogResult.OK;
 

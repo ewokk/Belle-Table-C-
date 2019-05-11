@@ -17,15 +17,7 @@ namespace ppe_valad
             InitializeComponent();
         }
 
-        private void bt_inscrit_Click(object sender, EventArgs e)
-        {
-            acceuil formsinscrit = new acceuil();
-
-            if (formsinscrit.ShowDialog() == DialogResult.OK)
-            {
-
-            }
-        }
+       
 
         private void bt_inscription_Click(object sender, EventArgs e)
         {
@@ -85,6 +77,36 @@ namespace ppe_valad
             numérisation formsnumérisation = new numérisation();
 
             if (formsnumérisation.ShowDialog() == DialogResult.OK)
+            {
+
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            compte_update formscomteup = new compte_update();
+
+            if (formscomteup.ShowDialog() == DialogResult.OK)
+            {
+
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            souhait formscomteup = new souhait();
+
+            if (formscomteup.ShowDialog() == DialogResult.OK)
+            {
+
+            }
+        }
+
+        private void bt_inscrit_Click(object sender, EventArgs e)
+        {
+            acceuil formsinscrit = new acceuil();
+
+            if (formsinscrit.ShowDialog() == DialogResult.OK)
             {
 
             }

@@ -32,8 +32,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dg_Session = new System.Windows.Forms.DataGridView();
             this.cb_formation = new System.Windows.Forms.ComboBox();
-            this.bt_add_formation = new System.Windows.Forms.Button();
-            this.bt_add_session = new System.Windows.Forms.Button();
             this.bt_bug = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dg_Session)).BeginInit();
             this.SuspendLayout();
@@ -78,26 +76,6 @@
             this.cb_formation.TabIndex = 37;
             this.cb_formation.SelectedIndexChanged += new System.EventHandler(this.cb_formation_SelectedIndexChanged);
             // 
-            // bt_add_formation
-            // 
-            this.bt_add_formation.Location = new System.Drawing.Point(393, 67);
-            this.bt_add_formation.Name = "bt_add_formation";
-            this.bt_add_formation.Size = new System.Drawing.Size(51, 39);
-            this.bt_add_formation.TabIndex = 64;
-            this.bt_add_formation.Text = "+";
-            this.bt_add_formation.UseVisualStyleBackColor = true;
-            this.bt_add_formation.Click += new System.EventHandler(this.bt_add_formation_Click);
-            // 
-            // bt_add_session
-            // 
-            this.bt_add_session.Location = new System.Drawing.Point(160, 124);
-            this.bt_add_session.Name = "bt_add_session";
-            this.bt_add_session.Size = new System.Drawing.Size(51, 39);
-            this.bt_add_session.TabIndex = 65;
-            this.bt_add_session.Text = "+";
-            this.bt_add_session.UseVisualStyleBackColor = true;
-            this.bt_add_session.Click += new System.EventHandler(this.bt_add_session_Click);
-            // 
             // bt_bug
             // 
             this.bt_bug.Location = new System.Drawing.Point(557, 441);
@@ -112,10 +90,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(632, 461);
+            this.ClientSize = new System.Drawing.Size(632, 469);
             this.Controls.Add(this.bt_bug);
-            this.Controls.Add(this.bt_add_session);
-            this.Controls.Add(this.bt_add_formation);
             this.Controls.Add(this.cb_formation);
             this.Controls.Add(this.dg_Session);
             this.Controls.Add(this.label1);
@@ -134,8 +110,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dg_Session;
         private System.Windows.Forms.ComboBox cb_formation;
-        private System.Windows.Forms.Button bt_add_formation;
-        private System.Windows.Forms.Button bt_add_session;
         private System.Windows.Forms.Button bt_bug;
     }
 }

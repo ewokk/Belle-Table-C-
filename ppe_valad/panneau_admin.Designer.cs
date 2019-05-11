@@ -36,6 +36,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.bt_inscription = new System.Windows.Forms.Button();
+            this.bt_inscrit = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // bt_visu
@@ -60,7 +61,7 @@
             // 
             // bt_bug
             // 
-            this.bt_bug.Location = new System.Drawing.Point(713, 430);
+            this.bt_bug.Location = new System.Drawing.Point(713, 489);
             this.bt_bug.Name = "bt_bug";
             this.bt_bug.Size = new System.Drawing.Size(75, 33);
             this.bt_bug.TabIndex = 12;
@@ -70,7 +71,7 @@
             // 
             // bt_habilitation
             // 
-            this.bt_habilitation.Location = new System.Drawing.Point(50, 162);
+            this.bt_habilitation.Location = new System.Drawing.Point(50, 221);
             this.bt_habilitation.Name = "bt_habilitation";
             this.bt_habilitation.Size = new System.Drawing.Size(709, 40);
             this.bt_habilitation.TabIndex = 13;
@@ -80,7 +81,7 @@
             // 
             // bt_mdp
             // 
-            this.bt_mdp.Location = new System.Drawing.Point(50, 226);
+            this.bt_mdp.Location = new System.Drawing.Point(50, 285);
             this.bt_mdp.Name = "bt_mdp";
             this.bt_mdp.Size = new System.Drawing.Size(709, 40);
             this.bt_mdp.TabIndex = 14;
@@ -90,7 +91,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(50, 284);
+            this.button1.Location = new System.Drawing.Point(50, 343);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(709, 40);
             this.button1.TabIndex = 15;
@@ -100,7 +101,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(50, 350);
+            this.button2.Location = new System.Drawing.Point(50, 409);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(709, 40);
             this.button2.TabIndex = 16;
@@ -110,7 +111,7 @@
             // 
             // bt_inscription
             // 
-            this.bt_inscription.Location = new System.Drawing.Point(50, 416);
+            this.bt_inscription.Location = new System.Drawing.Point(50, 475);
             this.bt_inscription.Name = "bt_inscription";
             this.bt_inscription.Size = new System.Drawing.Size(637, 30);
             this.bt_inscription.TabIndex = 17;
@@ -118,12 +119,23 @@
             this.bt_inscription.UseVisualStyleBackColor = true;
             this.bt_inscription.Click += new System.EventHandler(this.bt_inscription_Click);
             // 
+            // bt_inscrit
+            // 
+            this.bt_inscrit.Location = new System.Drawing.Point(50, 153);
+            this.bt_inscrit.Name = "bt_inscrit";
+            this.bt_inscrit.Size = new System.Drawing.Size(709, 40);
+            this.bt_inscrit.TabIndex = 18;
+            this.bt_inscrit.Text = "Gestion des inscrits";
+            this.bt_inscrit.UseVisualStyleBackColor = true;
+            this.bt_inscrit.Click += new System.EventHandler(this.bt_inscrit_Click);
+            // 
             // panneau_admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
-            this.ClientSize = new System.Drawing.Size(800, 475);
+            this.ClientSize = new System.Drawing.Size(800, 541);
+            this.Controls.Add(this.bt_inscrit);
             this.Controls.Add(this.bt_inscription);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -148,5 +160,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button bt_inscription;
+        private System.Windows.Forms.Button bt_inscrit;
     }
 }
