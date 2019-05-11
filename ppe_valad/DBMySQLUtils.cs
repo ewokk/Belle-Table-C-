@@ -38,7 +38,7 @@ namespace ppe_valad
         public void Insert_postuler(int Id_Participant, int Id_Session)
         {
             dbconnection.Open();
-            String strQuery = "INSERT INTO candidater(id ,accepter ,Id_Participant ,Id_Session ) VALUES(NULL , NULL ,@TheId_Participant,@TheId_Session)";
+            String strQuery = "INSERT INTO candidater(id ,accepter ,Id_Participant ,Id_Session,motif_refus ) VALUES(NULL , NULL ,@TheId_Participant,@TheId_Session, NULL)";
             var DynamicParameters = new DynamicParameters();
             DynamicParameters.Add("TheId_Participant",  Id_Participant);
             DynamicParameters.Add("TheId_Session",      Id_Session);

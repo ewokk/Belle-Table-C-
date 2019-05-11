@@ -126,6 +126,8 @@ namespace ppe_valad
                 // style //
                 RefreshListe1();
                 RefreshListe2();
+
+                database.delete_postuler(unInscrit.Id, session.id);
             }
         }
 
@@ -155,6 +157,8 @@ namespace ppe_valad
                 // style //
                 RefreshListe1();
                 RefreshListe2();
+
+                database.Insert_postuler(unParticipant.Id, session.id);
             }
         }
 

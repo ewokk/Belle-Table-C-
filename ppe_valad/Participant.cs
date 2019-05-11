@@ -15,56 +15,43 @@ namespace ppe_valad
         private string nom;
         private string prenom;
         private Session laSessionChoisie;
-        private string nom_formation;
-        private string session_date;
-        private string accepter;
-
 
         public int Id { get; set; }
         public int Id_Session { get; set; }
         public string Prenom { get; set; }
         public string Nom { get; set; }
-       
-
 
         public Participant()
         {
             this.laSessionChoisie = null;
         }
 
-        public Participant(string Nom, string Prenom, Session Session )
+        public Participant(string Nom, string Prenom, Session Session)
         {
-        nom                 =    Nom;
-        prenom              =    Prenom;
-        laSessionChoisie    =    Session;
+            nom = Nom;
+            prenom = Prenom;
+            laSessionChoisie = Session;
         }
 
-
-
         public void SetParticipant(string Nom, string Prenom, Session Session)
-    {
-        nom                 =    Nom;
-        prenom              =    Prenom;
-        laSessionChoisie    =    Session;
-    }
-    public void SetSession(Session Session)
-    {
-        laSessionChoisie    =    Session;
-    }
+        {
+            nom = Nom;
+            prenom = Prenom;
+            laSessionChoisie = Session;
+        }
+        public void SetSession(Session Session)
+        {
+            laSessionChoisie = Session;
+        }
 
-    public string GetNom_Prenom()
-    {
-        return Nom + " " + Prenom;
-    }
-    public string StrParticipant()
-    {
-        return this.GetNom_Prenom();
-    }
-
-    public void Save()
-    {
-           
-    }
+        public string GetNom_Prenom()
+        {
+            return Nom + " " + Prenom;
+        }
+        public string StrParticipant()
+        {
+            return this.GetNom_Prenom();
+        }
 
     }
 
