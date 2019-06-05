@@ -111,5 +111,15 @@ namespace ppe_valad
 
             }
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            SMS formsSMS = new SMS();
+
+            if (formsSMS.ShowDialog() == DialogResult.OK)
+            {
+
+            }
+        }
     }
 }

@@ -66,11 +66,11 @@ namespace ppe_valad
             {
                 var objectInscrit = (Participant)dg_participant.CurrentRow.DataBoundItem;
                 Participant unParticipant = row.DataBoundItem as Participant;
+            
                 Refu forms2 = new Refu(unParticipant);
-
                 if (forms2.ShowDialog() == DialogResult.OK)
                 {
-                    dataParticipant = database.SelectParticipantadmin();                        // requet sql                 //
+                    dataParticipant = database.SelectParticipantadmin();                              // requet sql                 //
                     dg_participant.SelectionMode = DataGridViewSelectionMode.FullRowSelect;          // selection de tout la ligne //
                     dg_participant.DataSource = dataParticipant;                                    // remplissage                //
 
@@ -85,13 +85,13 @@ namespace ppe_valad
         {
             foreach (DataGridViewRow row in dg_participant.SelectedRows)
             {
-
                 var objectInscrit = (Participant)dg_participant.CurrentRow.DataBoundItem;
                 Participant unParticipant = row.DataBoundItem as Participant;
+                int id = unParticipant.id;
                 string motif = "";
                 string accepter = "oui";
-                database.update_postuler(unParticipant.Id, unParticipant.Id_Session, motif, accepter);
-            }
+
+                database.update_postuler(unParticipant.id, unParticipant.Session_Id, accepter, motif);
                 dataParticipant = database.SelectParticipantadmin();                              // requet sql                 //
                 dg_participant.SelectionMode = DataGridViewSelectionMode.FullRowSelect;          // selection de tout la ligne //
                 dg_participant.DataSource = dataParticipant;                                    // remplissage                //
@@ -99,6 +99,9 @@ namespace ppe_valad
 
                 // style //
                 RefreshListe1();
+
+            }
+               
 
         }
 

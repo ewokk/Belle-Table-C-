@@ -31,12 +31,10 @@ C:\Users\theow\source\repos\ppe_valad\ppe_valad\obj\Debug\ppe_valad.panneau_gest
 C:\Users\theow\source\repos\ppe_valad\ppe_valad\obj\Debug\ppe_valad.compte_user.resources
 C:\Users\theow\source\repos\ppe_valad\ppe_valad\obj\Debug\ppe_valad.panneau_user.resources
 C:\Users\theow\source\repos\ppe_valad\ppe_valad\obj\Debug\ppe_valad.postuler.resources
-C:\Users\theow\source\repos\ppe_valad\ppe_valad\obj\Debug\ppe_valad.MesSessions.resources
 C:\Users\theow\source\repos\ppe_valad\ppe_valad\obj\Debug\ppe_valad.PDF.resources
 C:\Users\theow\source\repos\ppe_valad\ppe_valad\bin\Debug\itextsharp.dll
 C:\Users\theow\source\repos\ppe_valad\ppe_valad\bin\Debug\itextsharp.xml
 C:\Users\theow\source\repos\ppe_valad\ppe_valad\obj\Debug\ppe_valad.convocation.resources
-C:\Users\theow\source\repos\ppe_valad\ppe_valad\obj\Debug\ppe_valad.calendrier.resources
 C:\Users\theow\source\repos\ppe_valad\ppe_valad\obj\Debug\ppe_valad.numérisation.resources
 C:\Users\theow\source\repos\ppe_valad\ppe_valad\obj\Debug\ppe_valad.compte_update.resources
 C:\Users\theow\source\repos\ppe_valad\ppe_valad\obj\Debug\ppe_valad.souhait.resources

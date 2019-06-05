@@ -40,13 +40,13 @@ namespace ppe_valad
         private void Form2_Load(object sender, EventArgs e)
         {
 
-            dataParticipant = database.SelectParticipantAll(); // requet sql                 //
-            dg_participant.SelectionMode = DataGridViewSelectionMode.FullRowSelect;      // selection de tout la ligne //
-            dg_participant.DataSource = dataParticipant;                                // remplissage                //
+            dataParticipant = database.SelectParticipantAllsouhait(int.Parse(formation.id), session.id);              // requet sql                 //
+            dg_participant.SelectionMode = DataGridViewSelectionMode.FullRowSelect;                                  // selection de tout la ligne //
+            dg_participant.DataSource = dataParticipant;                                                            // remplissage                //
 
             dataInscrit = database.SelectParticipant_avc_Sessionn(session.id.ToString());
-            dg_inscrit.SelectionMode = DataGridViewSelectionMode.FullRowSelect;     // selection de tout la ligne //
-            dg_inscrit.DataSource = dataInscrit;                                // remplissage                //
+            dg_inscrit.SelectionMode = DataGridViewSelectionMode.FullRowSelect;      // selection de tout la ligne //
+            dg_inscrit.DataSource = dataInscrit;                                    // remplissage                //
 
             tbformation.Text = formation.nom;            // remplissage formation //
             tbdatedebut.Text = session.dateDebut;       // remplissage dateDebut //
@@ -127,7 +127,7 @@ namespace ppe_valad
                 RefreshListe1();
                 RefreshListe2();
 
-                database.delete_postuler(unInscrit.Id, session.id);
+                database.delete_postuler(unInscrit.id, session.id);
             }
         }
 
@@ -158,7 +158,7 @@ namespace ppe_valad
                 RefreshListe1();
                 RefreshListe2();
 
-                database.Insert_postuler(unParticipant.Id, session.id);
+                database.Insert_postuler(unParticipant.id, session.id);
             }
         }
 

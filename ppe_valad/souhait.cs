@@ -74,7 +74,7 @@ namespace ppe_valad
             id_Formation = int.Parse(object_Formation.id); //recupere l id de la formation //
 
             var Item_Participant = (Participant)dg_participant.CurrentRow.DataBoundItem;
-            int id = Item_Participant.Id;
+            int id = Item_Participant.id;
 
             database.Insert_souhait(id_Formation, id);
 

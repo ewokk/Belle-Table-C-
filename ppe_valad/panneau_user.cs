@@ -7,45 +7,55 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Dapper;
+using MySql.Data.MySqlClient;
 
 namespace ppe_valad
 {
     public partial class panneau_user : Form
     {
         private DBMySQLUtils database = new DBMySQLUtils();
-        List<Participant> dataConnexion = new List<Participant>();
+        List<Formation> cbFormationData = new List<Formation>();
+
         public panneau_user()
         {
             InitializeComponent();
             database.InitDb(); //Init la conection avec la basse MySQL//
+
+            cbFormationData = database.SellectFormationAll();
+
+            cb_formation.DataSource = cbFormationData;
+            cb_formation.DisplayMember = "nom";
+            cb_formation.ValueMember = "id";
+
+
+            var object_Formation = cb_formation.SelectedItem as Formation;
+            String id_Formation;
+            id_Formation = object_Formation.id; //recupere l id de la formation //
+
+            dg_Session.DataSource = database.SelectSession_avc_Formation(id_Formation); // referesh
+
+            dg_Session.Columns[0].Visible = false;
+
         }
-        private void bt_3_Click(object sender, EventArgs e)
+       
+        private void cb_formation_SelectedIndexChanged(object sender, EventArgs e)
         {
-            MesSessions formsMesSessions = new MesSessions();
+            var object_Formation = cb_formation.SelectedItem as Formation;
+            String id_Formation;
+            id_Formation = object_Formation.id; //recupere l id de la formation //
 
-            if (formsMesSessions.ShowDialog() == DialogResult.OK)
-            {
-
-            }
+            dg_Session.DataSource = database.SelectSession_avc_Formation(id_Formation); // referesh
         }
 
-        private void bt_4_Click(object sender, EventArgs e)
+        private void dg_Session_CellDubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            calendrier formscalendrier = new calendrier();
+            var Item_Formation = cb_formation.SelectedItem as Formation;
+            var Item_Session = (Session)dg_Session.CurrentRow.DataBoundItem;
 
-            if (formscalendrier.ShowDialog() == DialogResult.OK)
-            {
+            gestion_inscrit forms2 = new gestion_inscrit(Item_Formation, Item_Session);
 
-            }
-        }
-
-        private void bt_bug_Click(object sender, EventArgs e)
-        {
-            string lieux = this.Name;
-
-            bug formsbug = new bug(lieux);
-
-            if (formsbug.ShowDialog() == DialogResult.OK)
+            if (forms2.ShowDialog() == DialogResult.OK)
             {
 
             }

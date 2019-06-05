@@ -13,8 +13,7 @@ namespace ppe_valad
     public partial class Refu : Form
     {
         private DBMySQLUtils database = new DBMySQLUtils();
-
-        private Participant unParticipant;       // init // 
+        private Participant Participantrefu;       // init // 
 
 
         public Participant UnParticipant { get; set; } // get set de Participant // 
@@ -23,14 +22,18 @@ namespace ppe_valad
         {
             InitializeComponent();
             database.InitDb(); //Init la conection avec la basse MySQL//
+
+            Participantrefu = unParticipant;
         }
 
         private void bt_valider_Click(object sender, EventArgs e)
         {
-
+            
             string motif = rt_motif.Text;
-            string accepter = "oui";
-            database.update_postuler(unParticipant.Id, unParticipant.Id_Session, motif, accepter);
+            string accepter = "non";
+            database.update_postuler(Participantrefu.id, Participantrefu.Session_Id, accepter, motif);
+
+            this.DialogResult = DialogResult.OK;
         }
     }
 }

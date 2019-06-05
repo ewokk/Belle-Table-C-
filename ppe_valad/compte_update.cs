@@ -21,6 +21,8 @@ namespace ppe_valad
             database.InitDb(); //Init la conection avec la basse MySQL
             dataParticipant = database.SelectParticipantAll();
             dg_participant.DataSource = dataParticipant;
+            dg_participant.SelectionMode = DataGridViewSelectionMode.FullRowSelect;          // selection de tout la ligne //
+
             RefreshListe1();
         }
 
@@ -55,6 +57,12 @@ namespace ppe_valad
             dg_participant.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dg_participant.Columns[0].Visible = false;
             dg_participant.Columns[1].Visible = false;
+            dg_participant.Columns[4].Visible = false;
+            dg_participant.Columns[5].Visible = false;
+            dg_participant.Columns[6].Visible = false;
+            dg_participant.SelectionMode = DataGridViewSelectionMode.FullRowSelect;          // selection de tout la ligne //
+
+
 
         }
 
@@ -65,6 +73,8 @@ namespace ppe_valad
 
         private void dg_participant_DoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            
+
             var Item_Participant = (Participant)dg_participant.CurrentRow.DataBoundItem;
             string nom = Item_Participant.Nom;
             string prenom = Item_Participant.Prenom;
@@ -83,7 +93,7 @@ namespace ppe_valad
             string nom = tb_nom.Text;
             string prenom = tb_prenom.Text;
             var Item_Participant = (Participant)dg_participant.CurrentRow.DataBoundItem;
-            int id = Item_Participant.Id;
+            int id = Item_Participant.id;
 
             database.Update_participant(id,nom, prenom);    // changer le 1 en Id
             MessageBox.Show("Le compte " + nom + " " + prenom + " a été modifié");

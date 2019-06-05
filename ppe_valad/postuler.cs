@@ -65,7 +65,7 @@ namespace ppe_valad
             var Item_Session = (Session)dg_Session.CurrentRow.DataBoundItem;
             int id_session = Item_Session.id;
             var  Item_participant = (Participant)dg_participant.CurrentRow.DataBoundItem;
-            int id = Item_participant.Id;
+            int id = Item_participant.id;
             
             database.Insert_postuler(id, id_session);
 

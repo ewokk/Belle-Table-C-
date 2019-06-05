@@ -16,7 +16,7 @@ namespace ppe_valad
 
         public void InitDb()
         {
-            String connString = "Server='127.0.0.1'; User='root'; Password=''; Database='ppe_valad'; SslMode=none";
+           String connString = "Server='127.0.0.1'; User='root'; Password=''; Database='ppe_valad'; SslMode=none"
             dbconnection = new MySqlConnection(connString);
         }
 
@@ -45,15 +45,15 @@ namespace ppe_valad
             dbconnection.Query<Participant>(strQuery, DynamicParameters).ToList();
             dbconnection.Close();
         }
-        public void update_postuler(int Id_Participant, int Id_Session, string motif,string accepter)
+        public void update_postuler(int Id_Participant, int Session_Id,string accepter,string motif)
         {
             dbconnection.Open();
-            String strQuery = "UPDATE candidater SET accepter = '@accepter' ,motif_refus=@Themotif  WHERE Id = @TheId_Participant and Id_Session = @TheId_Session";
+            String strQuery = "UPDATE candidater SET accepter = @Theaccepter ,motif_refus=@Themotif  WHERE Id_Participant = @TheId_Participant and Id_Session = @TheId_Session";
             var DynamicParameters = new DynamicParameters();
             DynamicParameters.Add("TheId_Participant", Id_Participant);
-            DynamicParameters.Add("TheId_Session", Id_Session);
+            DynamicParameters.Add("TheId_Session", Session_Id);
             DynamicParameters.Add("Themotif", motif);
-            DynamicParameters.Add("accepter", accepter);
+            DynamicParameters.Add("Theaccepter", accepter);
             dbconnection.Query<Participant>(strQuery, DynamicParameters).ToList();
             dbconnection.Close();
         }
@@ -234,7 +234,7 @@ namespace ppe_valad
         public List<Formation> SellectFormationAll()
         {
             dbconnection.Open();
-            var formations = dbconnection.Query<Formation>("SELECT * FROM Formation").ToList();
+            var formations = dbconnection.Query<Formation>("SELECT * FROM formation").ToList();
             dbconnection.Close();
             return formations;
         }
@@ -283,7 +283,7 @@ namespace ppe_valad
         {
             dbconnection.Open();
             List<Participant> participants = new List<Participant>();
-            String strQuery = "SELECT participant.Nom,participant.Prenom,formation.Nom as nom_formation,session.DateDebut as session_date,candidater.accepter from participant join candidater on participant.Id = candidater.Id_Participant join session on candidater.Id_Session = session.Id join formation on session.Id_Formation = formation.Id";
+            String strQuery = "SELECT participant.Id,participant.Nom,participant.Prenom,formation.Nom as nom_formation,session.DateDebut as session_date,session.Id as session_Id,candidater.accepter from participant join candidater on participant.Id = candidater.Id_Participant join session on candidater.Id_Session = session.Id join formation on session.Id_Formation = formation.Id";
             var DynamicParameters = new DynamicParameters();
             participants = dbconnection.Query<Participant>(strQuery).ToList();
             dbconnection.Close();
@@ -378,7 +378,7 @@ namespace ppe_valad
         public void Insert_Formation(string Nom, int Niveau)
         {
             dbconnection.Open();
-            String strQuery = "INSERT INTO Formation(Nom, Niveau) VALUES(@TheNom , @TheNiveau)";
+            String strQuery = "INSERT INTO formation(Nom, Niveau) VALUES(@TheNom , @TheNiveau)";
             var DynamicParameters = new DynamicParameters();
             DynamicParameters.Add("TheNom",         Nom);
             DynamicParameters.Add("TheNiveau",      Niveau);

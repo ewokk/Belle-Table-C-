@@ -74,12 +74,6 @@
     <Compile Include="bug.Designer.cs">
       <DependentUpon>bug.cs</DependentUpon>
     </Compile>
-    <Compile Include="calendrier.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="calendrier.Designer.cs">
-      <DependentUpon>calendrier.cs</DependentUpon>
-    </Compile>
     <Compile Include="candidater.cs" />
     <Compile Include="ComboValuecs.cs" />
     <Compile Include="compte_update.cs">
@@ -158,12 +152,6 @@
     <Compile Include="inscription.Designer.cs">
       <DependentUpon>inscription.cs</DependentUpon>
     </Compile>
-    <Compile Include="MesSessions.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MesSessions.Designer.cs">
-      <DependentUpon>MesSessions.cs</DependentUpon>
-    </Compile>
     <Compile Include="numérisation.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -236,9 +224,6 @@
     <EmbeddedResource Include="bug.resx">
       <DependentUpon>bug.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="calendrier.resx">
-      <DependentUpon>calendrier.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="compte_update.resx">
       <DependentUpon>compte_update.cs</DependentUpon>
     </EmbeddedResource>
@@ -271,9 +256,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="inscription.resx">
       <DependentUpon>inscription.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MesSessions.resx">
-      <DependentUpon>MesSessions.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="numérisation.resx">
       <DependentUpon>numérisation.cs</DependentUpon>

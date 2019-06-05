@@ -37,6 +37,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.bt_inscrit = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // bt_4
@@ -81,7 +82,7 @@
             // 
             // bt_bug
             // 
-            this.bt_bug.Location = new System.Drawing.Point(680, 521);
+            this.bt_bug.Location = new System.Drawing.Point(680, 564);
             this.bt_bug.Name = "bt_bug";
             this.bt_bug.Size = new System.Drawing.Size(75, 23);
             this.bt_bug.TabIndex = 43;
@@ -129,11 +130,22 @@
             this.bt_inscrit.UseVisualStyleBackColor = true;
             this.bt_inscrit.Click += new System.EventHandler(this.bt_inscrit_Click);
             // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(46, 518);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(709, 40);
+            this.button4.TabIndex = 48;
+            this.button4.Text = "SMS";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
             // panneau_gestionnaire
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 554);
+            this.ClientSize = new System.Drawing.Size(800, 599);
+            this.Controls.Add(this.button4);
             this.Controls.Add(this.bt_inscrit);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
@@ -159,5 +171,6 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button bt_inscrit;
+        private System.Windows.Forms.Button button4;
     }
 }
